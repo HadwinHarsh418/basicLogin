@@ -1,0 +1,36 @@
+	<div class="container sign-in-container">
+		<form #userForm='ngForm' (ngSubmit)='onSubmit()' novalidate>
+			<h1>Sign in</h1>
+			<div class="social-container">
+        <a href="https://www.facebook.com/" class="social"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/" class="social"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="social"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="social"><i class="fa fa-google"></i></a>
+        <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+
+			</div>
+			<span>or use your account</span>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="E-mail"  required  #email="ngModel" [class.is-invalid]="email.invalid && email.touched"
+                 class="form-control" name="user_name" [(ngModel)]="userModel.user_name">
+                 <div *ngIf="email.errors &&(email.valid || email.touched)">
+                   <small class="text-danger" *ngIf="email.errors.required">email is required </small>
+                   <small class="text-danger" *ngIf="email.errors.pattern">Email required minimum 1 specific leter and numeric letter</small>
+                 </div>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="password" minlength="4" maxlength="20"  required #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
+                 class="form-control" name="password" [(ngModel)]="userModel.password">
+                 <div *ngIf="password.errors &&(password.valid || password.touched)">
+                   <small class="text-danger" *ngIf="password.errors.required">password is required </small>
+                   <small class="text-danger" *ngIf="password.errors?.minlength">Min 4 & Max 30 digit required </small>
+                  
+                </div>
+              </div>
+			<a >Forgot your password?</a>
+			<button  class="btn btn-primary" 
+      >Sign In</button>
+		</form>
+	</div>

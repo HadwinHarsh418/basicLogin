@@ -1,0 +1,22 @@
+<table>
+    <tr>
+      <th>S.no</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>View Button</th>
+      <th>Packing</th>
+      <th>Category</th>
+      <th> Tax Rate</th>
+      <th>Price</th>
+      <tr *ngFor="let d of allData">
+        <td>{{d.user_id}}  </td>
+        <td>{{d.product_id}} </td>
+      
+        <td>{{d.code}} </td>
+        <td>{{d.name}} </td>
+        <td>{{d.packing}} </td>
+        <td>{{d.category_id}} </td>
+        <td>{{d.tax_rate}} </td>
+        <td>{{d.price}} </td>
+    </tr>
+  </table>
